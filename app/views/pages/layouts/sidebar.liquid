@@ -1,0 +1,56 @@
+---
+title: Sidebar
+slug: sidebar
+position: 99
+listed: false
+published: false
+is_layout: true
+---
+{% extends layouts/default %}
+{% block top_msg %}
+{% endblock %}
+{% block featured_image %}
+{% include slim_header %}
+{% endblock %}
+{% block content %}
+<section>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-8 mr-auto'>
+        {% block freetext %}
+        <div class='freetext'>
+          {% editable_text "Freetext", rows: 10 %}
+          {% endeditable_text %}
+        </div>
+        {% endblock %}
+        {% block main %}
+        {% endblock %}
+        {% block list %}
+        {% endblock %}
+      </div>
+      <div class='col-md-4'>
+        <div class='row'>
+          <div class='col-md-10 mx-auto'>
+            {% block sidecontent %}
+            {% endblock %}
+            {% block sidebar %}
+            {% include child_nav %}
+            {% endblock %}
+            {% editable_text "Freetext Sidebar", rows: 5 %}
+            {% endeditable_text %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-sm-12'>
+        {% block center_callout %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block 'callout' %}
+{% include 'newsletter_signup' %}
+{% endblock %}

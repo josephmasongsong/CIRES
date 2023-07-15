@@ -1,0 +1,23 @@
+name: Newsletters
+slug: newsletters
+description: A description of the content type for the editors
+label_field_name: name
+order_by: created_at
+order_direction: asc
+public_submission_enabled: true
+public_submission_account_emails: []
+fields:
+- name:
+    label: Name
+    type: string
+    required: true
+    hint: The name of the newsletter signup
+    localized: false
+    group: main
+- email:
+    label: Email
+    type: email
+    required: true
+    hint: The email of the newsletter signup
+    localized: false
+    group: main

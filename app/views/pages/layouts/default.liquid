@@ -1,0 +1,82 @@
+---
+title: Default layout
+slug: default
+position: 99
+listed: false
+published: false
+is_layout: false
+---
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async='' src='https://www.googletagmanager.com/gtag/js?id=UA-145364309-1'></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-145364309-1');
+    </script>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    {% block og %}
+    <meta content='Community Impact Real Estate Society' property='og:title'>
+    <meta content='Community Impact Real Estate Society' property='og:site_name'>
+    <meta content='{% path_to home %}' property='og:url'>
+    <meta content='{{ 'dibeppe-corner.jpg' | theme_image_url }}' property='og:image'>
+    <meta content='Community Impact Real Estate contributes to the efforts of building an inclusive local economy by using the space in our portfolio to provide affordable goods, services, social support and employment opportunities for residents in the communities within which we work.' property='og:description'>
+    {% endblock %}
+    <title>{{ site.name }}</title>
+    <link crossorigin='anonymous' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css' integrity='sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ' rel='stylesheet'>
+    <link href='https://unpkg.com/smartphoto@1.1.0/css/smartphoto.min.css' rel='stylesheet'>
+    <link href='{{ 'favicon.png' | theme_image_url }}' rel='shortcut icon'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css' rel='stylesheet'>
+    {{ 'bootstrap.css' | stylesheet_tag }}
+    {{ 'hamburgers.min.css' | stylesheet_tag }}
+    {{ 'application.css' | stylesheet_tag }}
+  </head>
+  <body class='{% if page.slug == 'index' or page.slug == 'mission-and-goals' or page.slug == 'vision-and-values' %}pad-top{% endif %}'>
+    <div id='wrapper'>
+      {% include form_success %}
+      {% block top_msg %}
+      {% endblock %}
+      {% if page.slug == 'index' or page.slug == 'mission-and-goals' or page.slug == 'vision-and-values' %}
+      {% include 'nav_large' %}
+      {% else %}
+      {% include nav %}
+      {% endif %}
+      {% block featured_image %}
+      {% endblock %}
+      {% block content %}
+      {% endblock %}
+      {% include footer %}
+    </div>
+    {{ 'jquery.min.js' | javascript_tag }}
+    <script src='https://unpkg.com/smartphoto@1.1.0/js/jquery-smartphoto.min.js'></script>
+    {{ 'wow.min.js' | javascript_tag }}
+    {{ 'holder.min.js' | javascript_tag }}
+    {{ 'popper.min.js' | javascript_tag }}
+    {{ 'bootstrap.min.js' | javascript_tag }}
+    <script>
+      $(document).ready(function($) {
+        new WOW().init();
+      });
+    </script>
+    <script>
+      var $hamburger = $(".hamburger");
+      $hamburger.on("click", function(e) {
+        $hamburger.toggleClass("is-active");
+      });
+      setTimeout(function() {
+        $('.alert').slideUp();
+      }, 4000);
+    </script>
+    {% if page.slug == 'available-units' or page.slug == 'washington-community-market' %}
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAyIJY4qvddGqbKj3hkf36VatRLvuuR0vk' type='text/javascript'></script>
+    {% endif %}
+    {% block script %}
+    {% endblock %}
+  </body>
+</html>

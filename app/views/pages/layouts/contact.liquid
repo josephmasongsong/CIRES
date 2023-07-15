@@ -1,0 +1,39 @@
+---
+title: Contact
+slug: contact
+position: 99
+listed: false
+published: false
+is_layout: false
+---
+{% extends layouts/default %}
+{% block top_msg %}
+{% include top_callout %}
+{% endblock %}
+{% block featured_image %}
+{% include slim_header %}
+{% endblock %}
+{% block content %}
+<section class='pt-5'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-sm-4 sidebar'>
+        <div class='row'>
+          <div class='col-sm-11 mr-auto'>
+            {% block sidebar %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+      <div class='col-sm-8'>
+        <div class='row'>
+          <div class='col-sm-11 ml-auto'>
+            {% block main %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

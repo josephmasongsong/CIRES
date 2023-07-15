@@ -1,0 +1,119 @@
+---
+title: Contact Us
+slug: contact-us
+position: 4
+listed: true
+published: true
+is_layout: false
+editable_elements:
+  top_msg/address: "<i class='fa fa-map-marker text-white mr-2'></i>\r\n        <a
+    class='text-white' href='http://maps.google.com/?q=337 Gore Avenue Vancouver,
+    BC V6A 2Z3'>337 Gore Avenue Vancouver, BC V6A 2Z3</a>"
+  top_msg/phone: "<i class='fas fa-phone text-white mr-2'></i>\r\n        <a class='text-white'
+    href='tel:1-800-123-4567'>1-800-123-4567</a>"
+  top_msg/email: "<i class='far fa-envelope text-white mr-2'></i>\r\n        <a class='text-white'
+    href='mailto:info@communityimpactrealestate.com'>info@communityimpactrealestate.com</a>"
+  content/sidebar/sidebar header: Still have questions?
+  content/sidebar/sidebar blurb: "Please refer to the\r\n    <a href='portfolio/selection-criteria'
+    style='text-decoration:underline;'>tenant selection criteria</a>\r\n    and the\r\n
+    \   <a href='portfolio/faq' style='text-decoration:underline;'>frequently asked
+    questions</a>\r\n    before contacting CIRE. If you still have questions and are
+    interested in leasing one of our units please contact us."
+  featured_image/header_image: "/samples/_production/pages/WEB2ND_7782.JPG"
+  featured_image/subheader: We will get back to you in a timely manner
+  content/freetext/Freetext: ''
+  content/Freetext Sidebar: ''
+  callout/callout_image: "/samples/_production/pages/rsz_3f2c0559.jpg"
+  callout/newsletter header: Sign up for email updates
+  callout/newsletter blurb: Enter your email to get updates on CIRES. We will not
+    pass on your email to any third parties and you may decide opt out at any time.
+  content/main/address: "<i class='fa fa-map-marker-alt mr-2 text-secondary'></i>\r\n
+    \ <a href='http://maps.google.com/?q=56 Cordova Street East Vancouver, BC V6A
+    1K2'>56 Cordova Street East, Vancouver, BC V6A 1K2</a>"
+  content/main/phone: "<i class='fas fa-phone mr-2 text-secondary'></i>\r\n  <a href='tel:6044160318'>
+    604 416 0318</a>"
+  content/main/email: "<i class='far fa-envelope mr-2 text-secondary'></i>\r\n  <a
+    href='mailto:info@communityimpactrealestate.ca'>info@communityimpactrealestate.ca</a>"
+---
+{% extends layouts/sidebar %}
+{% block content/sidebar %}
+<div class='bg-light p-4 mb-5 mt-5 mt-sm-0'>
+  <h5 class='mb-3 py-2 text-primary'>{% editable_text "sidebar header", format: raw, rows: 2 %}Still have questions?{% endeditable_text %}</h5>
+  <p class='mb-0'>
+    {% editable_text "sidebar blurb", format: raw, rows: 3 %}
+    Please refer to the
+    <a href='/portfolio/selection-criteria' style='text-decoration:underline;'>tenant selection criteria</a>
+    and the
+    <a href='/purpose/faq' style='text-decoration:underline;'>frequently asked questions</a>
+    before contacting CIRE. If you still have questions and are interested in leasing one of our units please contact us.
+    {% endeditable_text %}
+  </p>
+</div>
+{% endblock %}
+{% block content/main %}
+<h5 class='mb-4 text-primary'>We can be reached at</h5>
+<p>
+  {% editable_text "address", format: raw, rows: 2 %}
+  <i class='fa fa-map-marker-alt mr-2 text-secondary'></i>
+  <a href='http://maps.google.com/?q=337 Gore Avenue Vancouver, BC V6A 2Z3'>337 Gore Avenue Vancouver, BC V6A 2Z3</a>
+  {% endeditable_text %}
+</p>
+<p>
+  {% editable_text "phone", format: raw, rows: 2 %}
+  <i class='fas fa-phone mr-2 text-secondary'></i>
+  <a href='tel:1-800-123-4567'>1-800-123-4567</a>
+  {% endeditable_text %}
+</p>
+<p class='mb-5'>
+  {% editable_text "email", format: raw, rows: 2 %}
+  <i class='far fa-envelope mr-2 text-secondary'></i>
+  <a href='mailto:info@communityimpactrealestate.ca'>info@communityimpactrealestate.ca</a>
+  {% endeditable_text %}
+</p>
+<h5 class='mb-4 text-primary'>Or contact us directly</h5>
+{% if message.errors %}
+<div class='alert alert-danger alert-dismissible fade show mb-4'>
+  <button aria-label='Close' class='close' data-dismiss='alert' type='button'>
+    <span aria-hidden='true'>×</span>
+  </button>
+  <h5>Form Submission Errors</h5>
+  <ul class='mb-0'>
+    {% for error in message.errors %}
+    <li>{{error[0] | capitalize}} -  {{error[1]}}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+<form action='{{contents.messages.public_submission_url}}' method='post'>
+  {% csrf_param %}
+  <input name='success_callback' type='hidden' value='/?form=success'>
+  <input name='error_callback' type='hidden' value='{% path_to page %}'>
+  <input name='form-type' type='hidden' value='contact'>
+  <div class='form-group'>
+    <label class='control-label' for='mailform-input-name'>Name</label>
+    <input class='form-control' name='content[name]' type='text' value='{{ message.name }}'>
+  </div>
+  <div class='form-group'>
+    <label class='control-label'>Email</label>
+    <input class='form-control' name='content[email]' type='email' value='{{ message.email }}'>
+  </div>
+  <div class='form-group'>
+    <label class='control-label'>Message</label>
+    <textarea class='form-control' name='content[body]' rows='5'>{{ message.body }}</textarea>
+  </div>
+  <div class='form-group mb-0'>
+    <button class='btn btn-info' type='submit'>Send Message</button>
+  </div>
+</form>
+{% endblock %}
+<section class="bgimage">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h5>Hello, world! Full width Hero-unit header</h5>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a href="#" class="btn btn-primary btn-large">Learn more »</a></p>
+      </div>
+    </div>
+  </div>
+</section>

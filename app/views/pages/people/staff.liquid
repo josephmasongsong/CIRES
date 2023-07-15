@@ -1,0 +1,35 @@
+---
+title: Staff
+slug: staff
+position: 1
+listed: true
+published: true
+is_layout: false
+editable_elements:
+  featured_image/header_image: "/samples/_production/pages/mission-dibeppe.jpg"
+  featured_image/subheader: The people that make CIRES possible
+  content/freetext/Freetext: ''
+  content/Freetext Sidebar: ''
+  callout/callout_image: ''
+  callout/newsletter header: Sign up for email updates
+  callout/newsletter blurb: Enter your email to get updates on CIRES. We will not
+    pass on your email to any third parties and you may decide opt out at any time.
+---
+{% extends parent %}
+{% block 'content/main' %}
+{% for member in contents.members %}
+{% if member.tags %}
+{% if member.tags contains "staff" %}
+<div class='media'>
+  <div class='media-body'>
+    <h4 class='mb-3 text-primary'>
+      {{member.name}} -
+      <small>{{member.title}}</small>
+    </h4>
+    <p class='mb-4'>{{member.bio}}</p>
+  </div>
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endblock %}

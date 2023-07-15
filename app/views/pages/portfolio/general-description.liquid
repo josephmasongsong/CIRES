@@ -1,0 +1,43 @@
+---
+title: General Description
+slug: general-description
+position: 1
+listed: true
+published: true
+is_layout: false
+editable_elements:
+  content/center_callout/Map: Map of Impact Real Estate
+  content/center_callout/map_image: ''
+  featured_image/header_image: "/samples/_production/pages/map.png"
+  featured_image/subheader: Learn about the make-up of CIRES' commercial property
+    portfolio, vacancies and how tenants are selected.
+  content/freetext/Freetext: "<h2 class=\"text-primary\">Current Portfolio</h2><p></p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<p
+    class=\"p1\"><span class=\"s1\">CIRE’s current portfolio consists of 52 commercial
+    units in 24 buildings in Vancouver’s inner city for a total of 104,000 square
+    feet. Most of the buildings are mixed use with commercial retail space on the
+    ground floor and social housing above. Three are solely commercial buildings.</span></p>\r\n<p
+    class=\"p1\"><span class=\"s1\">About 60% of the commercial units are leased below
+    market rates to social enterprises and non-profit organizations.</span></p>\r\n\r\n<p
+    class=\"p1\"><span class=\"s1\">For details and information on vacancies, please
+    see details at <a href=\"portfolio/available-unites\" title=\"Link: /available-unites\">available
+    units.</a></span></p>\r\n\r\n\r\n<p></p><p></p>"
+  content/Freetext Sidebar: ''
+  callout/callout_image: ''
+  callout/newsletter header: Sign up for email updates
+  callout/newsletter blurb: Enter your email to get updates on CIRES. We will not
+    pass on your email to any third parties and you may decide opt out at any time.
+---
+{% extends parent %}
+{% block content/freetext %}
+<div class='freetext'>
+  <p>CIRE’s current portfolio consists of 52 commercial units in 24 buildings in Vancouver’s inner city for a total of 104,000 square feet. Most of the buildings are mixed use with commercial retail space on the ground floor and social housing above. Three are solely commercial buildings.</p>
+  <p>About 60% of the commercial units are leased below market rates to social enterprises and non-profit organizations.</p>
+  <p>For details and information on vacancies, please see details at available units.</p>
+</div>
+{% endblock %}
+{% block 'content/main' %}
+{% endblock %}
+{% block 'content/center_callout' %}
+<h3 class='text-primary my-5'>{% editable_text "Map", format: raw, rows: 1 %}Map of Impact Real Estate{% endeditable_text %}</h3>
+<div style='background: url({% capture image_url %}{% editable_file 'map_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'map.png' | theme_image_url }}{% endif %}) center center; background-size: cover; height:350px; width: 100%;'></div>
+{% endblock %}

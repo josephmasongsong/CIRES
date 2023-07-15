@@ -1,0 +1,278 @@
+---
+title: Washington Community Market
+slug: washington-community-market
+position: 1
+listed: true
+published: true
+redirect_url: https://washingtoncommunitymarket.ca/
+is_layout: false
+editable_elements:
+  content/fullwidth/Testimonials header: Testimonials
+  content/fullwidth/Testimonials blurb: What our customers have to say
+  content/fullwidth/Block 1 header: "“A little better priced than others in the area”"
+  content/fullwidth/Block 1 blurb: "- Resident, DTES"
+  content/fullwidth/Block 2 header: "“Access to food and drink at a reasonable price”"
+  content/fullwidth/Block 2 blurb: "- Support Worker, DTES"
+  content/fullwidth/Block 3 header: "“I like it. The people are good, and the price
+    is right”"
+  content/fullwidth/Block 3 blurb: "- Resident, DTES"
+  content/fullwidth/Block 4 header: "“Means a lot and helps me out every day“"
+  content/fullwidth/Block 4 blurb: "- Resident, DTES"
+  featured_image/header_image: "/samples/_production/pages/WEB2ND_8841.JPG"
+  content/freetext/Freetext: "<p>Now, WCM is the grocery store for local non-profits,
+    social enterprises and other businesses operating in the community. Contact us
+    today to open a corporate account.  <br></p>"
+  content/split/Callout header: About the Market
+  content/split/Callout blurb: "For over 25 years, the Washington Community Market
+    (WCM) has been where Downtown Eastside residents shop to find an affordable source
+    of food and household goods. \r\n\r\nTo be more accessible for limited-income
+    residents of the DTES neighbourhood, some items are available in small or single-serve
+    portions. \r\n\r\nOur product selection is changing weekly so come visit often
+    – our door is always open to all!"
+  content/split/column_image: "/samples/_production/pages/maple-hotel.jpg"
+---
+{% extends layouts/fullwidth %}
+{% block featured_image %}
+<section class='slim-header' style='background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'maple-hotel-street-level.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;'>
+  <div class='overlay-with-gradient blue {% if image_url != '' %}transparent{% endif %}'></div>
+  <div class='container center-vh'>
+    <h1 class='mb-0 text-center wow fadeInUp'>{{ page.title }}</h1>
+    <p class="text-white text-center wow fadeInUp sub-header">Serving the residents of the DTES for over 25 years</p>
+  </div>
+</section>
+{% endblock %}
+{% block content/split %}
+<div class='container-fluid px-0'>
+  <div class='row no-gutters'>
+    <div class='col-md-6'>
+      <div class='callout-text text-white'>
+        <div class=''>
+          <div class='row center-v'>
+            <div class='col-xl-8 col-lg-10 ml-md-auto'>
+              <div class='px-5 pl-md-0 pr-md-5 wow fadeIn'>
+                <!-- <h4 class='mb-4 text-primary'>{% editable_text "Callout header", format: raw, rows: 1 %} Our Mission{% endeditable_text %}</h4> -->
+                <div class='lead text-primary' style="font-size:1.25rem;">{% editable_text "Callout blurb", format: raw, rows: 3 %}Community Impact Real Estate contributes to the efforts of building an inclusive local economy by using the space in our portfolio to provide affordable goods, services, social support and employment opportunities for residents in the communities within which we work.{% endeditable_text %}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-6'>
+      <div class="row">
+        <div class="col-xl-8 col-lg-10 mr-md-auto mt-5">
+          
+          <div id="demo" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+              <li data-target="#demo" data-slide-to="3"></li>
+              <li data-target="#demo" data-slide-to="4"></li>
+            </ul>
+          
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/samples/_production/assets/1.jpeg" alt="Washington Community Market" style="height:400px;">
+              </div>
+              <div class="carousel-item">
+                <img src="/samples/_production/assets/2.jpeg" alt="Washington Community Market" style="height:400px;">
+              </div>
+              <div class="carousel-item">
+                <img src="/samples/_production/assets/3.jpeg" alt="Washington Community Market" style="height:400px;">
+              </div>
+              <div class="carousel-item">
+                <img src="/samples/_production/assets/4.jpeg" alt="Washington Community Market" style="height:400px;">
+              </div>
+              <div class="carousel-item">
+                <img src="/samples/_production/assets/5.jpeg" alt="Washington Community Market" style="height:400px;">
+              </div>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="border-top: 1px solid #ccc;"></div>
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-md-6 pr-5">
+      <h5 class="text-primary">Location</h5>
+      <p style="font-size:1.125rem;">
+        <strong>Address:</strong>
+        179 Hastings Street E, Vancouver, BC, V6A 1N5
+      </p>
+      <p style="font-size:1.125rem;">
+        <strong>Hours:</strong>
+        Monday to Friday, 9 am – 5 pm
+      </p>
+      <div class="acf-map__container">
+        <div class="acf-map">
+          <div class="marker" data-lat="49.281399" data-lng="-123.100410"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h5 class="text-primary">Contact</h5>
+      <p style="font-size:1.125rem;">For inquiries about corporate accounts or career opportunities with the Washington Community Market please use this form.</p>
+      <form action='{{contents.messages.public_submission_url}}' method='post'>
+        {% csrf_param %}
+        <input name='success_callback' type='hidden' value='/?form=success'>
+        <input name='error_callback' type='hidden' value='{% path_to page %}'>
+        <input name='form-type' type='hidden' value='contact'>
+        <div class='form-group'>
+          <label class='control-label' for='mailform-input-name'>Name</label>
+          <input class='form-control' name='content[name]' type='text' value='{{ message.name }}'>
+        </div>
+        <div class='form-group'>
+          <label class='control-label'>Email</label>
+          <input class='form-control' name='content[email]' type='email' value='{{ message.email }}'>
+        </div>
+        <div class='form-group'>
+          <label class='control-label'>Message</label>
+          <textarea class='form-control' name='content[body]' rows='5'>{{ message.body }}</textarea>
+        </div>
+        <div class='form-group mb-0'>
+          <button class='btn btn-info' type='submit'>Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+  (function($) {
+/*
+*  new_map
+*
+*  This function will render a Google Map onto the selected jQuery element
+*
+*  @type	function
+*  @date	8/11/2013
+*  @since	4.3.0
+*
+*  @param	$el (jQuery element)
+*  @return	n/a
+*/
+function new_map( $el ) {
+  // var
+  var $markers = $el.find('.marker');
+  // vars
+  var args = {
+    zoom		: 17,
+    scrollwheel : false,
+    center		: new google.maps.LatLng(0, 0),
+    mapTypeId	: google.maps.MapTypeId.ROADMAP,
+    zoomControlOptions: {
+      position: google.maps.ControlPosition.TOP_RIGHT
+    },
+    streetViewControl: false,
+  };
+  // create map
+  var map = new google.maps.Map( $el[0], args);
+  // add a markers reference
+  map.markers = [];
+  // add markers
+  $markers.each(function(){
+      add_marker( $(this), map );
+  });
+  // center map
+  center_map( map );
+  // return
+  return map;
+}
+/*
+*  add_marker
+*
+*  This function will add a marker to the selected Google Map
+*
+*  @type	function
+*  @date	8/11/2013
+*  @since	4.3.0
+*
+*  @param	$marker (jQuery element)
+*  @param	map (Google Map object)
+*  @return	n/a
+*/
+function add_marker( $marker, map ) {
+  // var
+  var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
+  // create marker
+  var marker = new google.maps.Marker({
+      position	: latlng,
+      map			: map,
+      optimized	: false,
+      zIndex		: 1
+    });
+  // add to array
+  map.markers.push( marker );
+  // if marker contains HTML, add it to an infoWindow
+  if( $marker.html() )
+  {
+    // create info window
+    var infowindow = new google.maps.InfoWindow({
+      content		: $marker.html()
+    });
+    // show info window when marker is clicked
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open( map, marker );
+    });
+  }
+}
+/*
+*  center_map
+*
+*  This function will center the map, showing all markers attached to this map
+*
+*  @type	function
+*  @date	8/11/2013
+*  @since	4.3.0
+*
+*  @param	map (Google Map object)
+*  @return	n/a
+*/
+function center_map( map ) {
+  // vars
+  var bounds = new google.maps.LatLngBounds();
+  // loop through all markers and create bounds
+  $.each( map.markers, function( i, marker ){
+    var latlng = new google.maps.LatLng( marker.position.lat(), marker.position.lng() );
+    bounds.extend( latlng );
+  });
+  // only 1 marker?
+  if( map.markers.length == 1 ) {
+    // set center of map
+      map.setCenter( bounds.getCenter() );
+  } else {
+    // fit to bounds
+    map.fitBounds( bounds );
+  }
+}
+/*
+*  document ready
+*
+*  This function will render each map when the document is ready (page has loaded)
+*
+*  @type	function
+*  @date	8/11/2013
+*  @since	5.0.0
+*
+*  @param	n/a
+*  @return	n/a
+*/
+// global var
+var map = null;
+$(document).ready(function(){
+  $('.acf-map').each(function(){
+    // create map
+    map = new_map( $(this) );
+  });
+});
+})(jQuery);
+</script>
+{% endblock %}

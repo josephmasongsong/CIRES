@@ -1,0 +1,22 @@
+---
+title: Page not found
+slug: '404'
+position: 91
+listed: false
+published: true
+is_layout: false
+---
+{% extends 'layouts/default' %}
+{% block featured_image %}
+<section class='fat-header bg-secondary' style='background: url({{ 'dtvan.jpg' | theme_image_url }}) center center; background-size: cover;'>
+  <div class='overlay-with-gradient blue transparent'></div>
+  <div class='container home-text center-vh'>
+    <h1 class='mb-4 display-4 font-weight-bold text-white'>
+      Page Not Found
+    </h1>
+    <p class='lead mb-0 text-white'>
+      We're sorry but the page you are looking for either does not exist or the link is incorrect.
+    </p>
+  </div>
+</section>
+{% endblock %}

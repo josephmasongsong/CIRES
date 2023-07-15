@@ -1,0 +1,48 @@
+---
+title: Property Management
+slug: property-management
+position: 2
+listed: true
+published: true
+is_layout: false
+editable_elements:
+  featured_image/header_image: "/samples/_production/pages/dtvan.jpg"
+  featured_image/subheader: The people that make CIRES possible
+  content/Freetext Sidebar: ''
+  callout/callout_image: ''
+  callout/newsletter header: Sign up for email updates
+  callout/newsletter blurb: Enter your email to get updates on CIRES. We will not
+    pass on your email to any third parties and you may decide opt out at any time.
+  content/freetext/Freetext: "<p class=\"mb-4\">\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</p><p
+    class=\"xmsonormal\"></p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<p
+    class=\"xmsonormal\">Community Impact\r\nReal Estate Society (CIRES) holds a service
+    management contract with&nbsp;<a target=\"_blank\" href=\"https://atira.ca/who-we-are/our-mission/\"
+    title=\"Link: https://atira.ca/who-we-are/our-mission/\">Atira Property\r\nManagement
+    Inc. (APMI)</a>&nbsp;to perform rental property management duties, as outlined
+    in the Rules and Regulations of the Real Estate Services Act. These activities
+    include collecting rent, holding deposits, managing third-party vendors, preparing
+    budgets, annual reconciliations, and other duties.&nbsp;</p>\r\n\r\n<p class=\"xmsonormal\"></p>\r\n\r\n<p
+    class=\"xmsonormal\">APMI\r\nis a social enterprise, wholly owned by Atira Women's
+    Resource Society,\r\nwhich funds transition housing and support services for women
+    affected by\r\nviolence and abuse. This transition is also inline with CIRES’s
+    mandate to\r\nsupport our partners in community economic development.</p><p class=\"xmsonormal\"><br></p>\r\n\r\n\r\n\r\n\r\n\r\n<p
+    class=\"xmsonormal\"></p>\r\n\r\n\r\n\r\n\r\n\r\n<br><p></p>"
+---
+{% extends parent %}
+{% block 'content/main' %}
+{% for member in contents.members %}
+{% if member.tags %}
+{% if member.tags contains "property" %}
+<div class='media'>
+  <div class='media-body'>
+    <h4 class='mb-3 text-primary'>
+      {{member.name}} -
+      <small>{{member.title}}</small>
+    </h4>
+    <p class='mb-4'>{{member.bio}}</p>
+  </div>
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endblock %}

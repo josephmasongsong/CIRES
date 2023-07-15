@@ -1,0 +1,57 @@
+---
+title: Available Units
+slug: available-units
+position: 2
+listed: true
+published: true
+is_layout: false
+editable_elements:
+  content/sidecontent/Sidebar subheader: Interested in one of our units?
+  content/sidecontent/Sidebar blurb: "Please refer to the\r\n    <a href='portfolio/selection-criteria'
+    style='text-decoration:underline;'>tenant selection criteria</a>\r\n    and the\r\n
+    \   <a href='portfolio/faq' style='text-decoration:underline;'>frequently asked
+    questions</a>\r\n    before contacting CIRE. If you still have questions and are
+    interested in leasing one of our units please\r\n    <a href='/contact-us' style='text-decoration:underline;'>contact
+    us.</a>"
+  featured_image/header_image: "/samples/_production/pages/rsz__mg_7972.jpg"
+  featured_image/subheader: A list of our available units in the CIRES portfolio
+  content/freetext/Freetext: ''
+  content/Freetext Sidebar: ''
+  callout/callout_image: ''
+  callout/newsletter header: Sign up for email updates
+  callout/newsletter blurb: Enter your email to get updates on CIRES. We will not
+    pass on your email to any third parties and you may decide to opt out at any time.
+---
+{% extends layouts/sidebar %}
+{% block content/sidecontent %}
+<div class='bg-light p-4 mb-5 mt-5 mt-sm-0'>
+  <h5 class='mb-4 text-primary'>{% editable_text "Sidebar subheader", format: raw, rows: 2 %}Interested in one of our units?{% endeditable_text %}</h5>
+  <p class='mb-0'>
+    {% editable_text "Sidebar blurb", format: raw, rows: 4 %}
+    Please refer to the
+    <a href='/portfolio/selection-criteria' style='text-decoration:underline;'>tenant selection criteria</a>
+    and the
+    <a href='/purpose/faq' style='text-decoration:underline;'>frequently asked questions</a>
+    before contacting CIRE. If you still have questions and are interested in leasing one of our units please
+    <a href='/contact-us' style='text-decoration:underline;'>contact us.</a>
+    {% endeditable_text %}
+  </p>
+</div>
+{% endblock %}
+{% block content/list %}
+{% paginate contents.properties by 10 %}
+{% for property in paginate.collection %}
+<div class='media py-3 border-bottom'>
+  <div class='media-body'>
+    <h5 class='text-primary'>{{ property.address | remove: ", Vancouver, BC" }}</h5>
+    {% if property.link and property.link != "" and property.link != nil %}
+    <a class='mt-3' href='{{ property.link }}' style='text-decoration: underline;' target='_blank'>Learn More</a>
+    {% else %}
+    <a class='mt-3' href='/properties/{{ property._slug }}' style='text-decoration: underline;'>Learn More</a>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
+{% include 'pagination' with paginate %}
+{% endpaginate %}
+{% endblock %}

@@ -1,0 +1,44 @@
+<section class='px-3 px-sm-5 newsletter-signup' style='background: url({% capture image_url %}{% editable_file 'callout_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'dtvan.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;'>
+  <div class='overlay-with-gradient orange transparent'></div>
+  <div class='container center-v'>
+    <div class='row'>
+      <div class='col-sm-5 align-self-center'>
+        <h3 class='text-light mb-3'>{% editable_text "newsletter header", format: raw, rows: 1 %}Sign up for email updates{% endeditable_text %}</h3>
+        <p class='text-light mb-3 mb-sm-0 mt-2'>
+          {% editable_text "newsletter blurb", format: raw, rows: 4 %}Enter your email to get updates on CIRES. We will not pass on your email to any third parties and you may decide opt out at any time.{% endeditable_text %}
+        </p>
+      </div>
+      <div class='col-sm-7 align-self-center'>
+        {% if newsletter.errors %}
+        <div class='alert alert-danger alert-dismissible fade show mb-4'>
+          <button aria-label='Close' class='close' data-dismiss='alert' type='button'>
+            <span aria-hidden='true'>×</span>
+          </button>
+          <h5>Form Submission Errors</h5>
+          <ul class='mb-0'>
+            {% for error in newsletter.errors %}
+            <li>{{error[0] | capitalize}} -  {{error[1]}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        <form action='{{ contents.newsletters.public_submission_url }}' class='form d-block download-form mb-0' id='download_form' method='post'>
+          {% csrf_param %}
+          <div class='row'>
+            <div class='col-md-5'>
+              <input name='success_callback' type='hidden' value='{% path_to page %}?form=success'>
+              <input name='error_callback' type='hidden' value='{% path_to page %}'>
+              <input class='form-control mr-1' name='content[name]' placeholder='Name' type='text'>
+            </div>
+            <div class='col-md-5'>
+              <input class='form-control mr-1' name='content[email]' placeholder='Email' type='email'>
+            </div>
+            <div class='col-md-2'>
+              <button class='btn btn-outline-light w-auto' type='submit'>Subscribe</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

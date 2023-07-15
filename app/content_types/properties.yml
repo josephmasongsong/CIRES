@@ -1,0 +1,74 @@
+name: Properties
+slug: properties
+description: The list of CIRE properties
+label_field_name: address
+order_by: _position
+order_direction: asc
+public_submission_enabled: false
+public_submission_account_emails: []
+fields:
+- address:
+    label: Address
+    type: string
+    required: true
+    hint: The address of the property. (ex. 1989 Dunbar Street, Vancouver BC)
+    localized: false
+    group: main
+- property_type:
+    label: Property type
+    type: string
+    required: false
+    hint: ex. Street level storefront, office tower, etc
+    localized: false
+    group: main
+- square_feet:
+    label: Square feet
+    type: string
+    required: false
+    hint: ex. 1000 square feet
+    localized: false
+    group: main
+- price:
+    label: Price
+    type: string
+    required: false
+    hint: ex. 5000/month
+    localized: false
+    group: main
+- description:
+    label: Description of property
+    type: text
+    required: false
+    hint: Brief property description
+    localized: false
+    group: main
+- lease:
+    label: Lease terms / length
+    type: string
+    required: false
+    hint: ex. month to month, 6 months, 1 year
+    localized: false
+    group: main
+- photos:
+    label: Photos
+    type: has_many
+    required: false
+    localized: false
+    target: photos
+    inverse_of: property
+    ui_enabled: true
+    group: main
+- tags:
+    label: Tags
+    type: tags
+    required: false
+    hint: Tags for categorization
+    localized: false
+    group: main
+- link:
+    label: Link
+    type: string
+    required: false
+    hint: link to property listing on spacelist, macdonald realty, mls, etc
+    localized: false
+    group: main

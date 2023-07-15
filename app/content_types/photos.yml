@@ -1,0 +1,32 @@
+name: Photos
+slug: photos
+description: A description of the content type for the editors
+label_field_name: description
+order_by: created_at
+order_direction: asc
+group_by: property
+public_submission_enabled: false
+public_submission_account_emails: []
+fields:
+- description:
+    label: Description
+    type: string
+    required: true
+    hint: Description of the photo
+    localized: false
+    group: main
+- file:
+    label: File
+    type: file
+    required: false
+    hint: The photo
+    localized: false
+    group: main
+- property:
+    label: Property
+    type: belongs_to
+    required: false
+    localized: false
+    target: properties
+    ui_enabled: true
+    group: main

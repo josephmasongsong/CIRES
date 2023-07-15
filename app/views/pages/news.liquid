@@ -1,0 +1,35 @@
+---
+title: News
+slug: news
+position: 3
+listed: true
+published: true
+is_layout: false
+editable_elements:
+  featured_image/header_image: "/samples/_production/pages/contact.jpg"
+  featured_image/subheader: Latest announcements about our tenants, the impact of
+    the portfolio and community issues that intersect with commercial real estate.
+  content/Freetext: ''
+---
+{% extends layouts/blank %}
+{% block top_msg %}
+{% endblock %}
+{% block content/main %}
+<div class='posts row'>
+  {% for post in contents.posts by 3 %}
+  <div class='col-md-4 col-sm-6'>
+    <div class='post-listing px-2 mb-5'>
+      {% if post.featured_image.url %}
+      <div class='featured-image mb-3' style='background: url({{ post.featured_image.url }}) center center; background-size: cover; height: 200px;'></div>
+      {% endif %}
+      <div class='caption'>
+        <h5 class='text-primary mb-0'>{{ post.title | escape }}</h5>
+        <div class='text-info my-2'>{{ post.posted_at | date: "%A, %B %d, %Y" }}</div>
+        <p class='teaser text-primary'>{{ post.teaser }}</p>
+        <a class='text-underline' href='/posts/{{ post._slug }}'>Read More</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

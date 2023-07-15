@@ -1,0 +1,23 @@
+name: Questions
+slug: questions
+description: Questions and answers for the FAQ page.
+label_field_name: title
+order_by: _position
+order_direction: asc
+public_submission_enabled: false
+public_submission_account_emails: []
+fields:
+- title:
+    label: Title
+    type: string
+    required: true
+    hint: FAQ page question
+    localized: false
+    group: main
+- answer:
+    label: Answer
+    type: text
+    required: false
+    hint: Accompanying answer
+    localized: false
+    group: main

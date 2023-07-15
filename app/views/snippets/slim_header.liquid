@@ -1,0 +1,15 @@
+<section class='bg-secondary px-3 px-sm-5 slim-header' style='background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'vancouver.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;'>
+  <div class='overlay-with-gradient blue {% if image_url != '' %}transparent{% endif %}'></div>
+  <div class='container'>
+    <div class='center-v'>
+      <div class='wow fadeIn'>
+        <h1 class='mb-1 text-white'>{{ page.title }}</h1>
+        <p class='lead mb-0'>
+          {% editable_text "subheader", format: raw, rows: 2 %}
+          Insert snazzy catchy subheader here
+          {% endeditable_text %}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<section>
+  <div class='container'>
+    <h4 class='mb-5 text-primary'>Latest Updates</h4>
+    <div class='posts row'>
+      {% for post in contents.posts limit: 3 %}
+      <div class='col-sm-6 col-md-4'>
+        <div class='post-listing px-2 mb-4 mb-md-0'>
+          {% if post.featured_image.url %}
+          <div class='featured-image mb-3' style='background: url({{ post.featured_image.url }}) center center; background-size: cover; height: 200px;'></div>
+          {% endif %}
+          <div class='caption'>
+            <h5 class='text-primary mb-2'>{{ post.title | escape }}</h5>
+            <div class='text-info mb-3'>{{ post.posted_at | date: "%A, %B %d, %Y" }}</div>
+            <p class='teaser'>{{ post.teaser }}</p>
+            <a class='text-underline' href='/posts/{{ post._slug }}'>Read More</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

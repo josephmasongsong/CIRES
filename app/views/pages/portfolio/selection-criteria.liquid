@@ -1,0 +1,39 @@
+---
+title: Tenant Selection Criteria
+slug: selection-criteria
+position: 3
+listed: true
+published: true
+is_layout: false
+editable_elements:
+  featured_image/header_image: "/samples/_production/pages/dundas-shops.jpg"
+  featured_image/subheader: How CIRES chooses its tenants
+  content/freetext/Freetext: '<p class="mb-5">CIRES'' tenant selection process is
+    based upon achieving our <a href="/purpose/mission-and-goals" title="Link: /purpose/mission-and-goals">mission
+    and goals</a>. Every applicant for space, whether for market or non-market use,
+    is required to complete an Expression of Interest Application that contains key
+    questions about their business model, products and services they sell, and the
+    contributions that they will make to the community in which the unit is located.
+    CIRES will review and consider all applicants and lease renewal requests based
+    upon the blend of community and economic contribution the tenant will provide
+    to the community.<br></p>'
+  content/Freetext Sidebar: ''
+  callout/callout_image: ''
+  callout/newsletter header: Sign up for email updates
+  callout/newsletter blurb: Enter your email to get updates on CIRES. We will not
+    pass on your email to any third parties and you may decide opt out at any time.
+---
+{% extends parent %}
+{% block main %}
+{% endblock %}
+{% block content/list %}
+{% for criterion in contents.criteria %}
+<div class='media criteria'>
+  <i class='icon-check align-self-top text-secondary mr-4'></i>
+  <div class='media-body'>
+    <h4 class='mb-4 text-primary'>{{ criterion.title }}</h4>
+    <p class='mb-4'>{{ criterion.body }}</p>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

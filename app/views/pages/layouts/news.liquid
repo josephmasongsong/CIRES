@@ -1,0 +1,32 @@
+---
+title: News
+slug: news
+position: 99
+listed: false
+published: false
+is_layout: false
+---
+{% extends 'layouts/default' %}
+{% block content %}
+<section>
+  <div class='container'>
+    <div class='row justify-content-center'>
+      <div class='col-md-8'>
+        {% block main %}
+        {% endblock %}
+      </div>
+      <div class='col-md-4'>
+        <div class='row'>
+          <div class='col-md-10 mx-auto'>
+            {% block sidebar %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block callout %}
+{% include newsletter_signup %}
+{% endblock %}

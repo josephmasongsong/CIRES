@@ -1,0 +1,74 @@
+- 101 East Hastings Street:
+    _slug: 101-east-hastings-street
+    address: 101 East Hastings Street
+    description: "<p>Location\r\n101 East Hastings on the Corner of Columbia\r\nand
+      Hastings Street.\r\nImprovements\r\n• HVAC\r\n• Private washroom\r\n• 12 ft.
+      ceiling height\r\n• big window glazing\r\nZoning\r\nDEOD [Downtown Eastside
+      Oppenheimer]\r\nArea\r\n1,375 SQ.FT\r\nAsking Rate\r\n$14 PSF plus Additional
+      Rent $9 PSF\r\nMonthly Rent\r\n$2,635.00 plus HST<br></p><p><a target=\"_blank\"
+      href=\"https://sl2-prod.s3.amazonaws.com/user_assets/original/09ac17d2731cea39a0f38ae533061395c1884f37.PDF?1534206893\">See
+      the full listing with MacDonald Commercial Real Estate.</a></p>"
+    tags: []
+    link: https://www.spacelist.ca/listings/184577
+    _id:
+    - 5bb26aa374782004a2710aae
+    - 101-east-hastings-street
+    _visible: false
+- 265 East Hastings Street:
+    _slug: 265-east-hastings-street
+    address: 265 East Hastings Street
+    description: "<p>LOCATION\r\n265 East Hastings, ideally located on the North side
+      of\r\nHastings street, between Main street and Gore Avenue\r\nIMPROVEMENTS\r\n•
+      HVAC\r\n• Private washroom\r\n• 12 ft. ceiling height\r\n• Rear lane access
+      and loading door\r\n• Large basement storage area with no additional charge\r\nZONING\r\nDEOD
+      [Downtown Eastside Oppenheimer]\r\nASKING RENT\r\n$14.00 PSF\r\nADDITIONAL RENT\r\n$9.00
+      PSF\r\nMONTHLY RENT\r\n$5,990 + GST<br></p><p><a target=\"_blank\" href=\"https://sl2-prod.s3.amazonaws.com/user_assets/original/0d0afdf0fb3cdbf033ce1275dacb63c4202c0f53.pdf?1534207107\">See
+      the full listing with MacDonald Commercial Real Estate.</a></p>"
+    tags: []
+    link: https://www.spacelist.ca/listings/184578
+    _id:
+    - 5bb26a6574782004a2710aaa
+    - 265-east-hastings-street
+    _visible: false
+- 342 East Hastings Street:
+    _slug: 342-east-hastings-street-vancouver-bc
+    address: 342 East Hastings Street
+    description: "<p>LOCATION\r\n342 East Hastings; strategically located near Hastings
+      Street\r\nin close proximity Gore Avenue.\r\nIMPROVEMENTS\r\n• HVAC\r\n• 12
+      ft. ceiling height\r\n• Big windows with good exposure\r\n• Signage opportunity\r\nZONING\r\nDEOD
+      [Downtown Eastside Oppenheimer]\r\nASKING RENT\r\n$16.00 PSF\r\nADDITIONAL RENT\r\n$9.00
+      PSF\r\nMONTHLY RENT\r\n$986.00 + GST<br></p><p><a href=\"https://macdonaldcommercial.com/docs/listings/342-east-hastings/342-East-Hastings-Vancouver-LEASE-2018-Web.pdf\">See
+      the full listing at MacDonald Commercial Real Estate.</a></p>"
+    tags: []
+    link: https://www.spacelist.ca/listings/186448
+    _id:
+    - 5bb2691574782004a2710a95
+    - 342-east-hastings-street-vancouver-bc
+    _visible: false
+- 298 East Hastings Street:
+    _slug: 298-east-hastings-vancouver-bc
+    address: 298 East Hastings Street
+    property_type: 'Street level storefront '
+    square_feet: '3,902 Square Feet '
+    tags: []
+    link: https://www.spacelist.ca/listings/bc/vancouver/gore_ave#193765
+    _id:
+    - 5c50aca5b0d42c000f43dc90
+    - 298-east-hastings-vancouver-bc
+    _visible: false
+- 2073 Dundas Street, Vancouver, BC:
+    _slug: 2073-dundas-street-vancouver-bc-v5l-1j5
+    address: 2073 Dundas Street, Vancouver, BC
+    tags: []
+    link: http://www.corbelcommercial.com/property/2073-Dundas-Street/
+    _id:
+    - 5fdbe2f9b746c500ad5f9a39
+    - 2073-dundas-street-vancouver-bc-v5l-1j5
+    _visible: false
+- 'No properties available. Check back soon! ':
+    _slug: no-available-properties-check-back-soon
+    address: 'No properties available. Check back soon! '
+    tags: []
+    _id:
+    - 617702c4ac09ed007ca69a60
+    - no-available-properties-check-back-soon

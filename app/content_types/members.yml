@@ -1,0 +1,37 @@
+name: Members
+slug: members
+description: A description of the content type for the editors
+label_field_name: name
+order_by: _position
+order_direction: asc
+public_submission_enabled: false
+public_submission_account_emails: []
+fields:
+- name:
+    label: Name
+    type: string
+    required: true
+    hint: The name of the staff, board or advisory member
+    localized: false
+    group: main
+- bio:
+    label: Bio
+    type: text
+    required: false
+    hint: Short bio
+    localized: false
+    group: main
+- title:
+    label: Title
+    type: string
+    required: false
+    hint: Position title
+    localized: false
+    group: main
+- tags:
+    label: Tags
+    type: tags
+    required: false
+    hint: Advisory, Board, Staff, Property Managment
+    localized: false
+    group: main

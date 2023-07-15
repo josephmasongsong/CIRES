@@ -1,0 +1,51 @@
+name: Posts
+slug: posts
+description: A description of the content type for the editors
+label_field_name: title
+order_by: posted_at
+order_direction: desc
+public_submission_enabled: false
+public_submission_account_emails: []
+fields:
+- title:
+    label: Title
+    type: string
+    required: true
+    hint: The title of the post
+    localized: false
+    group: main
+- posted_at:
+    label: 'true'
+    type: date_time
+    required: false
+    hint: Date posted
+    localized: false
+    group: main
+- teaser:
+    label: Teaser
+    type: text
+    required: false
+    hint: Post teaser
+    localized: false
+    group: main
+- featured_image:
+    label: Featured image
+    type: file
+    required: false
+    hint: The image that shows up in the header
+    localized: false
+    group: main
+- body:
+    label: Body
+    type: text
+    required: false
+    hint: The content of the post
+    localized: false
+    group: main
+- tags:
+    label: Tags
+    type: tags
+    required: false
+    hint: Tags for categorization
+    localized: false
+    group: main

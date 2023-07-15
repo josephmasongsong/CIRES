@@ -1,0 +1,30 @@
+---
+title: Full width
+slug: fullwidth
+position: 99
+listed: false
+published: false
+is_layout: true
+---
+{% extends layouts/default %}
+{% block featured_image %}
+{% include fat_header %}
+{% endblock %}
+{% block content %}
+{% block split %}
+{% endblock %}
+<section>
+  <div class='container'>
+    {% block main %}
+    {% endblock %}
+    {% block fullwidth %}
+    {% endblock %}
+    {% block freetext %}
+    <div class='freetext'>
+      {% editable_text "Freetext", rows: 10 %}
+      {% endeditable_text %}
+    </div>
+    {% endblock %}
+  </div>
+</section>
+{% endblock %}
